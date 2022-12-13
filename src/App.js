@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+// wouter
+import { Route } from "wouter";
+// pages
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Login from "./pages/Login/Login";
+import Answers from "./pages/Answers/Answers";
+import Profile from "./pages/Profile/Profile";
+// redux
+import { useSelector } from "react-redux";
+import AuthRoute from "./AuthRoute";
 
-function App() {
+const App = () => {
+  // redux
+  const authUser = useSelector((state) => state.auth);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AuthRoute isLogged={authUser.isLogged}>
+        <Route path="/" component={Dashboard} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/answers/:id" component={Answers} />
+      </AuthRoute>
+      <Route path="/login" component={Login} />
     </div>
   );
-}
+};
 
 export default App;

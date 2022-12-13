@@ -1,0 +1,27 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100vh;
+  background-color: rgb(37,41,60);
+  padding: 1rem;
+}
+
+.background {
+  object-fit: cover;
+  height: 200px;
+  border-radius: 4px;
+  opacity: .3;
+}
+
+.background:hover {
+  opacity: .6;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5))
+}
+
+.options-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+}

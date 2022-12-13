@@ -1,0 +1,17 @@
+.response {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(44, 50, 84);
+  border-radius: 4px;
+  color: rgb(228,230,244);
+  padding: 0 1rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}

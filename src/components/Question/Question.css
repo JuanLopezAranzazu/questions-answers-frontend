@@ -1,0 +1,25 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(44, 50, 84);
+  border-radius: 4px;
+  color: rgb(228,230,244);
+  padding: 0 1rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}

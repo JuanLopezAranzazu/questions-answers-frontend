@@ -5,9 +5,72 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(23, 22, 22);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: sans-serif;
+  cursor: pointer;
+  padding: 12px;
+  min-width: 100px;
+  border: 0px;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+  border-radius: 8px;
+  color: rgb(228,230,244);
+}
+
+.btn-primary {
+  background-color: rgb(115,103,240);
+}
+
+.btn-primary:hover {
+  background-color: rgb(145, 135, 255); ;
+}
+
+.btn-danger {
+  background-color: #EA5455;
+}
+
+.btn-secondary {
+  background-color: rgb(213, 220, 227);
+  color: #000;
+}
+
+input, select {
+  height: 40px;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.btn-dismiss {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  flex: 0 0 auto;
+  font: inherit;
+  padding: 0;
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+}
+
+.body-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

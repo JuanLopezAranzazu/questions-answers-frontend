@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const ListQuestion = ({ userId, categoryId }) => {
   const [questions, setQuestions] = useState([]);
+  const [search, setSearch] = useState("");
   // redux
   const authUser = useSelector((state) => state.auth);
 
@@ -35,9 +36,29 @@ const ListQuestion = ({ userId, categoryId }) => {
 
   return (
     <div className="list-question">
-      {questions.map((question) => {
-        return <Question {...question} key={question.id} />;
-      })}
+      <div className="search">
+        <input
+          style={{ width: "250px" }}
+          type="text"
+          placeholder="Search..."
+          onChange={(event) => setSearch(event.target.value)}
+        />
+      </div>
+      <div className="questions">
+        {questions
+          ?.filter((question) => {
+            if (search === "") {
+              return question;
+            } else if (
+              question.title.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return question;
+            }
+          })
+          .map((question) => {
+            return <Question {...question} key={question.id} />;
+          })}
+      </div>
     </div>
   );
 };
